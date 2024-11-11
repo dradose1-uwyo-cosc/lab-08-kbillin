@@ -1,8 +1,8 @@
-# Your Name Here
+# Kaden Billin
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
+# 11-10-24
+# Lab 08
+# Lab Section: 12
 # Sources, people worked with, help given to:
 # your
 # comments
@@ -14,10 +14,69 @@
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
+while True:
+    aaa = (input("enter a: "))
+    bbb = (input("enter b: "))
+    ccc = (input("enter c: "))
+    exit_confirm = input("type 'exit' to exit or 'repeat' to re-enter these values: ")
+    if exit_confirm.lower() == "exit":
+        break
+    elif exit_confirm.lower() == "repeat":
+        print("Repeating...")
+    else:
+        print("This is not one of the accepted responses. This part will be repeated.")
 
-print("*" * 75)
+def checkaaa():
+    if (aaa).isdigit() == True:
+        return int(aaa)
+    elif aaa.split(".")[0].isdigit() and aaa.split(".")[1].isdigit():
+        splitaaa = (aaa.split("."))
+        if (splitaaa[0].isdigit() == False or splitaaa[1].isdigit() == False) or len(splitaaa) > 2:
+            return False
+        else:
+            return float(aaa)
+    else:
+        return False
 
+def checkbbb():
+    if (bbb).isdigit() == True:
+        return int(bbb)
+    elif bbb.split(".")[0].isdigit() and bbb.split(".")[1].isdigit():
+        splitbbb = (bbb.split("."))
+        if (splitbbb[0].isdigit() == False or splitbbb[1].isdigit() == False) or len(splitbbb) > 2:
+            return False
+        else:
+            return float(bbb)
+    else:
+        return False
 
+def checkccc():
+    if (ccc).isdigit() == True:
+        return int(ccc)
+    elif ccc.split(".")[0].isdigit() and ccc.split(".")[1].isdigit():
+        splitccc = (ccc.split("."))
+        if (splitccc[0].isdigit() == False or splitccc[1].isdigit() == False) or len(splitccc) > 2:
+            return False
+        else:
+            return float(ccc)
+    else:
+        return False      
+
+aaa = checkaaa()
+bbb = checkbbb()
+ccc = checkccc()
+
+def quadform():
+    disc = bbb**2 - 4 * aaa * ccc
+    if disc > 0:
+        xone = (-bbb + ((disc) ** 0.5)) / (2 * aaa)
+        xtwo = (-bbb - ((disc) ** 0.5)) / (2 * aaa)
+        return xone, xtwo
+    else:
+        return "null"
+
+answ = quadform()
+print(answ)
 # Point-slope y = mx + b
 # This is used in mathematics to determine what the value y would be for any given x
 # Where b is the y-intercept, where the line crosses the y-axis (x = 0)
